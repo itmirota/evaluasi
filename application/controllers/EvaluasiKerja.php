@@ -97,6 +97,18 @@ class evaluasiKerja extends BaseController
     $this->loadViews("evaluasiKerja/penilaian_tabel", $this->global, $data, NULL);
   }
 
+  public function penilaian_v21(){
+    $this->global['pageTitle'] = 'Evaluasi Kerja Mirota KSM';
+    $this->global['pageHeader'] = 'Formulir Penilaian Karyawan';
+    $id = $this->uri->segment(2);
+
+    $data['list_data']= $this->evaluasiKerja_model->getDataEvaluasi($id);
+    $data['id']= $id;
+
+    $this->loadViews("evaluasiKerja/penilaian_tabel2", $this->global, $data, NULL);
+  }
+
+
   public function penilaian_v3(){
     $this->global['pageTitle'] = 'Evaluasi Kerja Mirota KSM';
     $this->global['pageHeader'] = 'Formulir Penilaian Karyawan';
@@ -106,6 +118,17 @@ class evaluasiKerja extends BaseController
     $data['id']= $id;
 
     $this->loadViews("evaluasiKerja/penilaian_list", $this->global, $data, NULL);
+  }
+
+  public function penilaian_v31(){
+    $this->global['pageTitle'] = 'Evaluasi Kerja Mirota KSM';
+    $this->global['pageHeader'] = 'Formulir Penilaian Karyawan';
+    $id = $this->uri->segment(2);
+
+    $data['list_data']= $this->evaluasiKerja_model->getDataEvaluasi($id);
+    $data['id']= $id;
+
+    $this->loadViews("evaluasiKerja/penilaian_list2", $this->global, $data, NULL);
   }
 
   public function savePenilaian(){
